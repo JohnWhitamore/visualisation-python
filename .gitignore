@@ -1,0 +1,37 @@
+# Byte-compiled files
+__pycache__/
+*.py[cod]
+
+# Data files
+data/*.csv
+data/*.tsv
+data/*.parquet
+data/*.json
+data/*.xlsx
+
+# Jupyter notebooks checkpoints
+.ipynb_checkpoints/
+
+# Environment files
+.env
+.venv/
+env/
+venv/
+*.env
+
+# Anaconda distribution folders
+*.conda
+*.ipynb
+
+# Spyder project files
+.spyproject/
+.spyderproject
+.spyderworkspace
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Logs and backups
+*.log
+*.bak
