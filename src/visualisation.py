@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-def plot_store_product_grid(dates, synth_data, emission_mean):
+def plot_store_product_grid(dates, synth_data, fitted_line):
     
     # Dimensions
     S, P, N = synth_data.shape
@@ -13,7 +13,7 @@ def plot_store_product_grid(dates, synth_data, emission_mean):
 
     # Colours
     synth_data_colour = (90/255, 140/255, 160/255)
-    emission_colour = (190/255, 110/255, 60/255)
+    fit_colour = (190/255, 110/255, 60/255)
     error_zone_colour = (190/255, 190/255, 190/255)
 
     # Figure
@@ -35,14 +35,14 @@ def plot_store_product_grid(dates, synth_data, emission_mean):
             # Data
             ax = axes[p, s]
             obs = synth_data[s, p, :]
-            mean = emission_mean[s, p, :]
-            lower = np.maximum(mean - np.sqrt(mean), 0)
-            upper = mean + np.sqrt(mean)
+            fit = fitted_line[s, p, :]
+            lower = np.maximum(fit - np.sqrt(fit), 0)
+            upper = fit + np.sqrt(fit)
 
             # Plot the data
             ax.scatter(dates, obs, color=synth_data_colour, s=30, alpha=0.6,
                         edgecolors=(30/255, 30/255, 30/255), linewidth=0.5)
-            ax.plot(dates, mean, color=emission_colour, alpha=0.8, linewidth=1.5)
+            ax.plot(dates, fit, color=fit_colour, alpha=0.8, linewidth=1.5)
             ax.fill_between(dates, lower, upper, color=error_zone_colour, alpha=0.2)
 
             # Demarcate weeks
