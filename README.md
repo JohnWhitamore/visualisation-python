@@ -1,9 +1,17 @@
 # visualisation-python
 
-Uses synthetic retail sales data as a running example.
+Clean examples of visualisation code. Uses synthetic retail sales data as a running example.
 - 12 stores
 - 3970 products
 - 63 days (9 weeks)
+
+## packages used
+
+`pathlib`: object-oriented, clean syntax, built-in methods for handling file systems.  
+`numpy`: particularly `.npz` compressed file for Numpy arrays.  
+`matplotlib.pyplot`: used to visualise a graph layout.  
+`seaborn`: built on top of matplotlib. brings a touch of elegance.  
+
 
 ## data/
   
