@@ -5,6 +5,8 @@ Clean examples of visualisation code. Uses synthetic retail sales data as a runn
 - 3970 products
 - 63 days (9 weeks)
 
+The synthetic sales data was generated using ancestral sampling on a graph constructed using `igraph`.
+
 ## packages used
 
 `pathlib`: object-oriented, clean syntax, built-in methods for handling file systems.  
