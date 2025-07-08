@@ -36,12 +36,12 @@ npz:
 # Load the npz file
 data = np.load(data_path)
 
-# Access individual arrays by name
+# ... access individual arrays by name
 dates = data["dates"]
 synth_sales_data = data["synth_sales_data"]
 fitted_line = data["fitted_line"]
 
-# Print the shapes of the arrays
+# ... print the shapes of the arrays
 print(dates.shape)
 print(synth_sales_data.shape)
 print(fitted_line.shape)
@@ -52,12 +52,14 @@ Don't try to plot the whole dataset at once!
 Keep the grid size relatively small.
 """
 
+# Specify (max size of ) data to use in the plots
 max_grid_size = 8
 
 synth_data_subset = synth_sales_data[:max_grid_size, :max_grid_size, :]
 fitted_line_subset = fitted_line[:max_grid_size, :max_grid_size, :]
 
 # Define a function to set the size of the plotted grid dynamically
+# ... creates a zooming-out effect
 def set_grid_size(n):
     
     # Set grid size
@@ -87,17 +89,20 @@ pp = PanelPlot()
 
 for n in range(N):
     
-    # Set the grid size to display
+    # ... set the grid size to display
     grid_size = set_grid_size(n)
     
-    # Generate a panel plot
+    # ... generate a panel plot
     fig, axes = pp.plot_store_product_grid_gif(dates, synth_data_subset, fitted_line_subset, grid_size, n)
     
-    # Save and close the plot
+    # ... save the plot
     fig.savefig(f'{frames_path}/frame_{n}.png', dpi=150)
-    plt.close(fig)
-
-plt.show()
+    
+    # ... close or display the plot
+    if n==N-1:
+        plt.show()
+    else:
+        plt.close(fig)
 
 print("finished creating frames")
 
@@ -109,7 +114,6 @@ with iio.get_writer(f'{frames_path}/dynamic_graph.gif', mode='I', duration=0.5, 
     for fn in filenames:
         frame = iio.imread(fn)
         writer.append_data(frame)
-
 
 print("finished creating GIF")
 

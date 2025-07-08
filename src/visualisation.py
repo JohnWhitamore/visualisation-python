@@ -80,12 +80,12 @@ class PanelPlot:
             mean_linewidth = 4.0
             mean_alpha = 1.0
             
-            obs_s = 200
-            obs_linewidth = 1.75
+            obs_s = 300
+            obs_linewidth = 2.0
             obs_alpha = 0.8
             
-            label_fontsize = 12
-            axis_fontsize = 12
+            label_fontsize = 30
+            axis_fontsize = 24
             
         elif grid_size == 2:
             
@@ -96,8 +96,8 @@ class PanelPlot:
             obs_linewidth = 1.5
             obs_alpha = 0.6
             
-            label_fontsize = 12
-            axis_fontsize = 12
+            label_fontsize = 24
+            axis_fontsize = 20
             
         elif grid_size <= 4:
             
@@ -108,8 +108,8 @@ class PanelPlot:
             obs_linewidth = 1.0
             obs_alpha = 0.4
             
-            label_fontsize = 12
-            axis_fontsize = 12
+            label_fontsize = 18
+            axis_fontsize = 16
             
         else:
             
@@ -160,8 +160,6 @@ class PanelPlot:
                 ax = axes[p, s]
                 mean = fitted_line[s, p, :n]
                 obs = synth_data[s, p, :n]
-                
-                
                         
                 # ... plot the data
                 ax.plot(dates[:n], mean, color=fit_colour, alpha=mean_alpha, linewidth=mean_linewidth)
@@ -195,7 +193,6 @@ class PanelPlot:
                 
                 ax.tick_params(axis='x', labelsize=axis_fontsize)
                 ax.tick_params(axis='y', labelsize=axis_fontsize)
-    
     
                 # ... axes
                 ax.set_xlim(dates[0], dates[-1])
