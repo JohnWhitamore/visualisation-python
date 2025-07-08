@@ -1,7 +1,7 @@
 import numpy as np
 from pathlib import Path
 
-import visualisation as viz
+from visualisation import PanelPlot
 
 
 """
@@ -47,4 +47,5 @@ synth_data_subset = synth_sales_data[:num_stores, :num_products, :]
 fitted_line_subset = fitted_line[:num_stores, :num_products, :]
 
 # Generate a (quite stylish) panel plot
-viz.plot_store_product_grid(dates, synth_data_subset, fitted_line_subset)
+pp = PanelPlot()
+pp.plot_store_product_grid(dates, synth_data_subset, fitted_line_subset)
