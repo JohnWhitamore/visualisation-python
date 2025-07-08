@@ -11,8 +11,8 @@ Clean examples of visualisation code. Uses synthetic retail sales data as a runn
 `numpy`: including `.npz` compressed file storage for Numpy arrays.  
 `matplotlib.pyplot`: used to visualise a graph structure.  
 `seaborn`: built on top of matplotlib.  
-`imagio`: used to make a GIF.
-`igraph`: used to create a graph (nodes and edges) showing the structure of a (hypothetical) retail business.
+`imagio`: used to make a GIF.  
+`igraph`: used to create a graph (nodes and edges) showing the structure of a (hypothetical) retail business.  
 
 ## data/
   
