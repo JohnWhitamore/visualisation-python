@@ -5,7 +5,7 @@ import visualisation as viz
 
 
 """
-# pathlib is nice:
+# pathlib:
 # - cwd: current working directory
 # - cwd.parent: up one level from the current working directory
 # - note that / is not in quotation marks. pathlib overloads / to become an operator that joins strings.
@@ -17,7 +17,7 @@ cwd = Path.cwd()
 data_path = cwd.parent / "data" / "synthetic_data.npz"
 
 """
-npz is great:
+npz:
 - very fast
 - the .names attribute (e.g. data.names) contains the names of the arrays in the file
 """
@@ -35,7 +35,11 @@ print(dates.shape)
 print(synth_sales_data.shape)
 print(fitted_line.shape)
 
-# Select a subset of data to plot. Don't try to plot the whole dataset at once!
+"""
+Don't try to plot the whole dataset at once!
+"""
+
+# Select a subset of data to plot.
 num_stores = 3
 num_products = 3
 
