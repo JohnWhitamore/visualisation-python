@@ -11,6 +11,7 @@ Clean examples of visualisation code. Uses synthetic retail sales data as a runn
 `numpy`: including `.npz` compressed file storage for Numpy arrays.  
 `matplotlib.pyplot`: used to visualise a graph structure.  
 `seaborn`: built on top of matplotlib.  
+`imagio`: used to make a GIF.
 
 ## data/
   
@@ -21,12 +22,18 @@ Clean examples of visualisation code. Uses synthetic retail sales data as a runn
 
 ## src/
  
-`visualisation.py` is a tiny (but perfectly-formed) visualisation library.
+`visualisation.py` is a tiny (but stylish) visualisation library.
 
 `panelplot.py`
 - loads Numpy arrays stored as `.npz`
-- uses `visualisation.plot_store_products(dates, synth_data, fitted_line)` to generate a panel plot.
-
+- `visualisation.PanelPlot.plot_store_products(dates, synth_data, fitted_line)` generates a panel plot.
+  
  ![seaborn_panel_plot](https://github.com/user-attachments/assets/a43aa5dc-350d-4d04-a8d7-520d4b4f6c1b)
 
-  
+`panelplotgif.py`
+- like `panelplot.py` but uses a time-loop a) to create frames and b) to zoom out to grids of increasing size
+- `visualisation.PanelPlot.plot_store_products_gif(dates, synth_data, fitted_line, grid_size, n)` makes a GIF from panel plot frames.
+![dynamic_graph](https://github.com/user-attachments/assets/c6717be5-ac17-477d-9e5e-7e9ee24dc848)
+
+
+    
