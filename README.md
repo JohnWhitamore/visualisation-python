@@ -8,10 +8,9 @@ Clean examples of visualisation code. Uses synthetic retail sales data as a runn
 ## packages used
 
 `pathlib`: object-oriented, clean syntax, built-in methods for handling file systems.  
-`numpy`: particularly `.npz` compressed file for Numpy arrays.  
-`matplotlib.pyplot`: used to visualise a graph layout.  
+`numpy`: including `.npz` compressed file storage for Numpy arrays.  
+`matplotlib.pyplot`: used to visualise a graph structure.  
 `seaborn`: built on top of matplotlib. brings a touch of elegance.  
-
 
 ## data/
   
